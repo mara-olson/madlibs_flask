@@ -39,15 +39,24 @@ def say_hello():
 
     return render_template("hello.html")
 
+
 @app.route("/game")
 def show_madlib_form():
     """Display whether the visitor chose to play the game or not"""
     wants_to_play = request.args.get("play_or_not")
 
-    if wants_to_play:
-        return render_template("game.html")
-    else:
-        return render_template("goodbye.html")
+    return render_template("compliment.html", play_or_not=wants_to_play)
+
+    
+
+
+@app.route("/goodbye")
+def say_goodbye():
+    """For visitors that chose not to play the game, say goodbye"""
+
+
+    return render_template("goodbye.html")
+
 
 @app.route("/greet")
 def greet_person():
@@ -56,8 +65,10 @@ def greet_person():
     player = request.args.get("person")
 
     compliment = choice(AWESOMENESS)
-
+    
     return render_template("compliment.html", person=player, compliment=compliment)
+
+    
 
 
 if __name__ == "__main__":
