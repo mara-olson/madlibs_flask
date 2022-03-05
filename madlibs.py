@@ -42,9 +42,12 @@ def say_hello():
 @app.route("/game")
 def show_madlib_form():
     """Display whether the visitor chose to play the game or not"""
-    if 
-    return render_template()
+    wants_to_play = request.args.get("play_or_not")
 
+    if wants_to_play:
+        return render_template("game.html")
+    else:
+        return render_template("goodbye.html")
 
 @app.route("/greet")
 def greet_person():
