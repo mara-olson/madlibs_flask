@@ -45,7 +45,10 @@ def show_madlib_form():
     """Display whether the visitor chose to play the game or not"""
     wants_to_play = request.args.get("play_or_not")
 
-    return render_template("compliment.html", play_or_not=wants_to_play)
+    if wants_to_play == "yes":
+        return render_template("game.html", play_or_not=wants_to_play)
+    else:
+        return render_template("goodbye.html", play_or_not=wants_to_play)
 
     
 
