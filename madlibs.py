@@ -39,6 +39,12 @@ def say_hello():
 
     return render_template("hello.html")
 
+@app.route("/game")
+def show_madlib_form():
+    """Display whether the visitor chose to play the game or not"""
+    if 
+    return render_template()
+
 
 @app.route("/greet")
 def greet_person():
@@ -55,4 +61,4 @@ if __name__ == "__main__":
     # Setting debug=True gives us error messages in the browser and also
     # "reloads" our web app if we change the code.
 
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0", port="5001")
