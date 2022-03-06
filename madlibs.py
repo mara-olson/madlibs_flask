@@ -42,7 +42,10 @@ def say_hello():
 
 @app.route("/game")
 def show_madlib_form():
-    """Display whether the visitor chose to play the game or not"""
+    """Provide entry fields for the user to enter a name, color, noun, & adjective to play Madlibs"""
+
+    """If the player opted not to play, send them to a goodby page"""
+    
     wants_to_play = request.args.get("play_or_not")
 
     if wants_to_play == "yes":
@@ -51,12 +54,15 @@ def show_madlib_form():
         return render_template("goodbye.html", play_or_not=wants_to_play)
 
     
+@app.route("/madlib")
+def show_madlib():
+    """Display the Madlib story that contains the user's entries from /game"""
+    return render_template("madlib.html")
 
 
 @app.route("/goodbye")
 def say_goodbye():
     """For visitors that chose not to play the game, say goodbye"""
-
 
     return render_template("goodbye.html")
 

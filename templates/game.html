@@ -6,13 +6,19 @@
   <body>
     <h1>Welcome to the game! Follow the steps below to play...</h1>
     <form action="/game">
-      <input type="text" name="madperson" />Enter a random first name of your
-      choosing, male or female:
+      <label>Enter a random first name of your choosing, male or female:</label>
+      <input type="text" name="madperson" /><br />
+      <label>Select a color: </label>
       <select name="color_select">
         <option value="red">Red</option>
         <option value="blue">Blue</option>
-        <option value="green">Green</option>
-      </select>
+        <option value="green">Green</option></select
+      ><br />
+      <label>Type a random noun:</label>
+      <input type="text" name="noun_entry" /><br />
+      <label>Enter any random adjective: </label>
+      <input type="text" name="adj_entry" /><br />
+      <input type="submit" />
     </form>
   </body>
 </html>
