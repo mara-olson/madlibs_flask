@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>A Compliment</title>
-  </head>
-  <body>
-    Hi {{ person }}! I think you're {{ compliment }}!
-    <form action="/game">
-      Would you like to play a game?
-      <input type="radio" name="play_or_not" value="yes" />
-      <label>Yes</label>
-      <input type="radio" name="play_or_not" value="no" />
-      <label>No</label>
-      <input type="submit" />
-    </form>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %} Hi {{ person }}! I think you're {{
+compliment }}!
+<form action="/game">
+  Would you like to play a game?
+  <input type="radio" name="play_or_not" value="yes" />
+  <label>Yes</label>
+  <input type="radio" name="play_or_not" value="no" />
+  <label>No</label>
+  <input type="submit" />
+</form>
+{% endblock %}

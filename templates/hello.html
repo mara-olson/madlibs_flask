@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hi There!</title>
-  </head>
-  <body>
-    <h1>Hi There!</h1>
+{% extends 'base.html' %} {% block content %}
 
-    <form action="/greet">
-      What is your name? <input type="text" name="person" />
-      <input type="submit" />
-    </form>
-  </body>
-</html>
+<form action="/greet">
+  What is your name? <input type="text" name="person" />
+  <input type="submit" />
+</form>
+
+{% endblock %}

@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Story Time!</title>
-  </head>
-  <body>
-    <h3>Read your Madlib below:</h3>
-    There once was a {{ displayed_color }} {{ displayed_noun }} sitting in the
-    Hackbright Lab. When {{ displayed_person }} went to pick it up, it burst
-    into flames in a totally {{ displayed_adj }} way.
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h3>Read your Madlib below:</h3>
+There once was a {{ displayed_color }} {{ displayed_noun }} sitting in the
+Hackbright Lab. When {{ displayed_person }} went to pick it up, it burst into
+flames in a totally {{ displayed_adj }} way. {% endblock %}
