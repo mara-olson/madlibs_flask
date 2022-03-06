@@ -1,6 +1,7 @@
 """A madlib game that compliments its users."""
 
 from random import choice
+import re
 
 from flask import Flask, render_template, request
 
@@ -57,7 +58,16 @@ def show_madlib_form():
 @app.route("/madlib")
 def show_madlib():
     """Display the Madlib story that contains the user's entries from /game"""
-    return render_template("madlib.html")
+
+    madperson = request.args.get("madperson")
+
+    madcolor = request.args.get("color")
+
+    madnoun = request.args.get("noun")
+
+    madadj = request.args.get("adj")
+
+    return render_template("madlib.html", displayed_person=madperson, displayed_color=madcolor, displayed_noun=madnoun, displayed_adj=madadj)
 
 
 @app.route("/goodbye")
